@@ -1,9 +1,8 @@
-import {PiMagnifyingGlassBold} from "react-icons/pi";
-import DateSelector from "@/app/tickets/DateSelector";
+import {PiMagnifyingGlassBold} from 'react-icons/pi'
 
 const ZIP_PLACEHOLDER = 'Find Showtimes with Zipcode'
 
-export default function ZipCodeInput() {
+export default function ZipcodeInput() {
   return (
     <div className="w-full grid grid-cols-5 gap-x-2 items-center">
       <label htmlFor="zip-search" className="text-black text-md md:text-nowrap">

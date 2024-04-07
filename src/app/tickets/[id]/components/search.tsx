@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import ZipCodeInput from "@/app/tickets/ZipCodeInput";
-import DateSelector from "@/app/tickets/DateSelector";
+import ZipcodeInput from '@/app/tickets/[id]/components/zipcode-input'
+import DateSelector from '@/app/tickets/[id]/components/data-selector'
 
 export default function Search() {
   return (
@@ -10,7 +10,7 @@ export default function Search() {
         event.preventDefault()
       }}>
         <div className="flex gap-x-2 justify-between items-center">
-          <ZipCodeInput/>
+          <ZipcodeInput/>
         </div>
         <DateSelector/>
       </form>

@@ -1,5 +1,8 @@
-"use client"
-export default function DateSelector() {
+'use client'
+
+import {generateDates} from '@/app/tickets/[id]/data'
+
+export default function DataSelector() {
   const dates = generateDates(new Date())
   const locale = 'en-US'
 
@@ -12,9 +15,10 @@ export default function DateSelector() {
         <div className="flex gap-x-2 px-2 py-4 scroll-smooth overflow-x-scroll col-span-full snap-x">
           {
             dates.map((date) => (
-              <button key={date.getTime()}
-                      className="bg-white rounded-lg p-2 text-black min-w-14 snap-x"
-                      onClick={() => console.log(date)}>
+              <button
+                key={date.getTime()}
+                className="bg-white rounded-lg p-2 text-black min-w-14 snap-x"
+              >
                 <div className="text-lg font-bold">
                   {date.toLocaleString(locale, {weekday: 'short'})}
                 </div>
@@ -29,14 +33,4 @@ export default function DateSelector() {
       </div>
     </div>
   )
-}
-
-export function generateDates(startDate: Date, amount = 10): Date[] {
-  return [...Array(amount)]
-    .map((_, i) => {
-      // Generate days based on passed `amount`
-      const result = new Date(startDate)
-      result.setDate(startDate.getDate() + i)
-      return result
-    })
 }
