@@ -2,6 +2,7 @@ export interface Movie {
   id: number
   name: string
   posterUrl: string
+  brandColor: string
 }
 
 export interface TheaterShowTimes {
@@ -11,7 +12,6 @@ export interface TheaterShowTimes {
   city: string
   state: string
   zip: string
+  date: string
   showTimes: string[]
 }
-
-export type ShowTimes = Record<string, TheaterShowTimes[]>

@@ -13,7 +13,7 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 0,
     'import/no-default-export': 0,
     semi: ['error', 'never'],
-    quotes: ['error', 'single']
+    quotes: ['error', 'single'],
   },
   parserOptions: {
     project,

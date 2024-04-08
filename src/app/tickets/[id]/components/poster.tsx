@@ -6,6 +6,7 @@ export default function Poster({posterUrl, posterClassname}: { posterUrl: string
   return (
     <div className="relative">
       <Image
+        priority
         width={1536}
         height={1536}
         alt="Movie Poster"
