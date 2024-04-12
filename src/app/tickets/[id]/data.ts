@@ -41,7 +41,9 @@ const SHOW_TIMES: Record<string, TheaterShowTimes[] | undefined> = {
     }]
 }
 
-export function generateDates(startDate: Date, amount = 10): Date[] {
+export function generateDates(amount = 10): Date[] {
+  const startDate = startOfDay()
+
   return [...new Array<number>(amount)]
     .map((_, i) => {
       // Generate days based on passed `amount`
@@ -51,15 +53,29 @@ export function generateDates(startDate: Date, amount = 10): Date[] {
     })
 }
 
-export function getShowTimes(zip: string, date: string): TheaterShowTimes[] {
-  return (date ? SHOW_TIMES[zip]?.filter((showTimes) => byDate(date, showTimes)) : SHOW_TIMES[zip]) ?? []
+export function getShowTimes(zip: string, date: Date): TheaterShowTimes[] {
+
+  console.log('getShowTimes', { zip, date })
+
+  return SHOW_TIMES[zip]?.filter((showTimes) => byDate(date, showTimes)) ?? []
 }
 
-function byDate(date: string, showTimes: TheaterShowTimes): boolean {
-  const showDate = new Date(date)
-  return showDate.getTime() >= new Date(showTimes.date).getTime()
+function byDate(date: Date, showTimes: TheaterShowTimes): boolean {
+  const showTimeDate = new Date(showTimes.date)
+
+  const filter =  showTimeDate.getTime() >= date.getTime()
+
+  console.log('byDate', date, showTimeDate, filter)
+
+  return filter
 }
 
 export function getMovieById(id: number): Movie | null {
   return MOVIES[id] ?? null
+}
+
+export const startOfDay = () => {
+  const now=new Date()
+  now.setUTCHours(0, 0, 0, 0)
+  return now
 }

@@ -7,7 +7,11 @@ module.exports = {
   extends: [
     require.resolve('@vercel/style-guide/eslint/node'),
     require.resolve('@vercel/style-guide/eslint/typescript'),
+    'plugin:tailwindcss/recommended',
+    'plugin:react-hooks/recommended',
+
   ],
+  plugins: ['tailwindcss', 'react-hooks'],
   rules: {
     'import/no-named-as-default': 0,
     '@typescript-eslint/explicit-function-return-type': 0,

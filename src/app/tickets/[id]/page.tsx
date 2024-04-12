@@ -11,14 +11,14 @@ export default function TicketPages({params}: { params: { id: number } }): React
   if(!movie) return notFound()
 
   return (
-    <div className="flex flex-col md:flex-row text-white w-full h-full">
+    <div className="flex w-full flex-col text-white lg:flex-row">
       <Poster
-        posterClassname="w-screen h-auto md:h-screen md:w-auto max-h-[390px] md:max-h-none md:max-w-[390px] lg:max-w-[625px] object-center"
         posterUrl={movie.posterUrl}
       />
-      <div className="w-full">
-        <Search brandColor={movie.brandColor}/>
-      </div>
+
+      <section className="w-full max-w-full overflow-hidden">
+        <Search brandColor={movie.brandColor} />
+      </section>
     </div>
-  )
+)
 }
