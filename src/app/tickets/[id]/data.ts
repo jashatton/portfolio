@@ -4,15 +4,15 @@ const MOVIES: Record<number, Movie> = {
   1:
     {
       id: 1,
-      name: 'Battle over Fiera',
+      title: 'Battle over Fiera',
       posterUrl: '/tickets/battle-over-fiera.png',
       brandColor: '#D97706',
     },
   2:
     {
-      id: 1,
-      name: 'Jess and Deno',
-      posterUrl: '/tickets/jess-and-deno.png',
+      id: 2,
+      title: 'Jess and Deno',
+      posterUrl: '/tickets/jess-and-deno.jpg',
       brandColor: '#9FACE1'
     }
 }
@@ -54,24 +54,20 @@ export function generateDates(amount = 10): Date[] {
 }
 
 export function getShowTimes(zip: string, date: Date): TheaterShowTimes[] {
-
-  console.log('getShowTimes', { zip, date })
-
   return SHOW_TIMES[zip]?.filter((showTimes) => byDate(date, showTimes)) ?? []
 }
 
 function byDate(date: Date, showTimes: TheaterShowTimes): boolean {
   const showTimeDate = new Date(showTimes.date)
-
-  const filter =  showTimeDate.getTime() >= date.getTime()
-
-  console.log('byDate', date, showTimeDate, filter)
-
-  return filter
+  return showTimeDate.getTime() >= date.getTime()
 }
 
 export function getMovieById(id: number): Movie | null {
   return MOVIES[id] ?? null
+}
+
+export function getMovies(): Movie[] {
+  return Object.values(MOVIES)
 }
 
 export const startOfDay = () => {

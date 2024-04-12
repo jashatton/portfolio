@@ -1,6 +1,6 @@
 export interface Movie {
   id: number
-  name: string
+  title: string
   posterUrl: string
   brandColor: string
 }
