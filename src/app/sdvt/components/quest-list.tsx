@@ -5,7 +5,7 @@ export default function QuestList() {
   const { quests } = useQuests()
 
   return (
-    <div className="flex gap-2">
+    <div className="flex flex-col md:flex-row gap-2">
       {
         quests.map((quest) => (
           <QuestCard key={quest.id} quest={quest} />
