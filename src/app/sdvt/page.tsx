@@ -1,6 +1,5 @@
 'use client'
 
-import { getAllQuests } from '@/app/sdvt/data'
 import QuestProvider from '@/app/sdvt/provider/quests-provider'
 import QuestList from '@/app/sdvt/components/quest-list'
 
