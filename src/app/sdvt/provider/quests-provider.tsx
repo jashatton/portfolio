@@ -29,8 +29,8 @@ export default function QuestProvider({ children }: { children: React.ReactNode 
     const markItemStored = (questId: number, itemId: number, stored: boolean) => {
       const updatedQuests = trackerState.quests.map((quest) => {
         if(quest.id === questId) {
-          const updatedAchievements = quest.achievements.map((achievement) => {
-            const updatedItems = achievement.items.map((item) => {
+          const updatedSubQuests = quest.subQuests.map((subQuest) => {
+            const updatedItems = subQuest.items.map((item) => {
               if(item.id === itemId) {
                 return {
                   ...item,
@@ -40,13 +40,13 @@ export default function QuestProvider({ children }: { children: React.ReactNode 
               return item
             })
             return {
-              ...achievement,
+              ...subQuest,
               items: updatedItems
             }
           })
           return {
             ...quest,
-            achievements: updatedAchievements
+            subQuests: updatedSubQuests
           }
         }
         return quest
@@ -58,8 +58,8 @@ export default function QuestProvider({ children }: { children: React.ReactNode 
     const markItemCompleted = (questId: number, itemId: number, completed: boolean) => {
       const updatedQuests = trackerState.quests.map((quest) => {
         if(quest.id === questId) {
-          const updatedAchievements = quest.achievements.map((achievement) => {
-            const updatedItems = achievement.items.map((item) => {
+          const updatedSubQuests = quest.subQuests.map((subQuest) => {
+            const updatedItems = subQuest.items.map((item) => {
               if(item.id === itemId) {
                 return {
                   ...item,
@@ -69,13 +69,13 @@ export default function QuestProvider({ children }: { children: React.ReactNode 
               return item
             })
             return {
-              ...achievement,
+              ...subQuest,
               items: updatedItems
             }
           })
           return {
             ...quest,
-            achievements: updatedAchievements
+            subQuests: updatedSubQuests
           }
         }
         return quest
