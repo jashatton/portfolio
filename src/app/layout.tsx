@@ -6,7 +6,10 @@ import clsx from 'clsx'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Jason Hatton\'s Development Portfolio',
+  title: {
+    default: 'Jason Hatton\'s Development Portfolio',
+    template: '%s | Jason Hatton\'s Development Portfolio',
+  },
   description: 'A little something about Jason Hatton and the kind of work he does.',
   openGraph: {
     images: {
