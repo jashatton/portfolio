@@ -18,6 +18,13 @@ module.exports = {
     'import/no-default-export': 0,
     semi: ['error', 'never'],
     quotes: ['error', 'single'],
+    'import/no-extraneous-dependencies': [
+      'error', {
+        'devDependencies': false,
+        'optionalDependencies': false,
+        'peerDependencies': false,
+      }
+    ],
   },
   parserOptions: {
     project,
@@ -28,5 +35,6 @@ module.exports = {
         project,
       },
     },
+    'import/core-modules': ['@ngneat/falso', 'tailwind-scrollbar']
   },
 }

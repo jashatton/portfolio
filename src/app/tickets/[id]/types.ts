@@ -3,6 +3,7 @@ export interface Movie {
   title: string
   posterUrl: string
   brandColor: string
+  textColor: string
 }
 
 export interface TheaterShowTimes {

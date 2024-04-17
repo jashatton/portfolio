@@ -12,7 +12,7 @@ export default function ZipcodeInput({ onChange}: { onChange: (zip: string) => v
   return (
     <div className="flex w-full items-center gap-x-2">
       <label htmlFor="zip-search" className="text-gray-300 md:text-nowrap">
-        Enter Zipd
+        Enter Zip
       </label>
       <div className="flex w-full gap-x-2 rounded-lg bg-white p-4">
         <PiMagnifyingGlassBold size={20} color="black"/>
@@ -22,6 +22,7 @@ export default function ZipcodeInput({ onChange}: { onChange: (zip: string) => v
           type="text"
           className="w-full text-sm text-black focus:ring-offset-4"
           autoFocus
+          defaultValue="55555"
           onChange={handleOnChange}
           placeholder={ZIP_PLACEHOLDER}
         />

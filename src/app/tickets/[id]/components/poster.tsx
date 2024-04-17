@@ -10,7 +10,7 @@ export default function Poster({posterUrl, title}: { posterUrl: string, title: s
         height={1536}
         alt="Movie Poster"
         src={posterUrl}
-        className="h-[500px] bg-center bg-no-repeat object-cover md:bg-left lg:h-screen lg:min-w-[400px] lg:max-w-[720px]"
+        className="bg-center bg-no-repeat object-cover md:bg-left lg:h-[95vh] lg:min-w-[400px] lg:max-w-[720px]"
       />
       <div className="absolute bottom-8 flex w-full justify-center">
         <p className="top-0 rounded-2xl bg-black/30 p-2 text-center text-3xl text-yellow-300">{title}</p>

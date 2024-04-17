@@ -1,36 +1,37 @@
 import {type TheaterShowTimes} from '@/app/tickets/[id]/types'
 
-export default function SearchResults({ results, brandColor }: { results: TheaterShowTimes[], brandColor: string}) {
+export default function SearchResults({ results, brandColor, textColor }: { results: TheaterShowTimes[], brandColor: string, textColor: string }) {
 
   if(results.length === 0) return <NoResults />
 
   return (
-    <div className="flex flex-col gap-y-2 bg-black p-2">
+    <div className="flex h-screen max-h-dvh flex-col gap-y-2 overflow-y-auto overflow-x-hidden bg-black p-2 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-gray-600 scrollbar-corner-black">
       {
         results.map((result) => (
-          <SearchResult key={result.id} result={result} brandColor={brandColor}/>
+          <SearchResult key={result.id} result={result} brandColor={brandColor} textColor={textColor}/>
         ))
       }
     </div>
   )
 }
 
-function SearchResult({result, brandColor}: {
+function SearchResult({result, brandColor, textColor}: {
   result: TheaterShowTimes
   brandColor: string
+  textColor: string
 }) {
   const { name, address, city, state, zip, date, showTimes } = result
 
 
   return (
     <div style={{ backgroundColor: brandColor }} className="flex flex-col gap-y-2 rounded-lg p-4">
-      <p className="text-lg font-bold text-gray-300">{name}</p>
-      <p className="mb-2 text-sm text-gray-300">{address} {city}, {state} {zip}</p>
-      <p className="text-lg font-bold text-gray-300">{date}</p>
-      <div className="flex flex-col gap-2 sm:flex-row">
+      <p style={{ color: textColor }} className="text-lg font-bold">{name}</p>
+      <p style={{ color: textColor }} className="mb-2 text-sm">{address} {city}, {state} {zip}</p>
+      <p style={{ color: textColor }} className="text-lg font-bold">{date}</p>
+      <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
         {
           showTimes.map((showtime, i) => (
-            <div className="w-full min-w-32 text-nowrap rounded-lg bg-amber-700 px-4 py-2 font-bold text-gray-300 sm:w-fit"
+            <div style={{ color: textColor }} className="w-full min-w-32 text-nowrap rounded-lg bg-black/20 px-4 py-2 font-bold text-gray-300 sm:w-fit"
                  key={i}>{showtime}</div>
           ))
         }

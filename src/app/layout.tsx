@@ -1,22 +1,32 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import clsx from 'clsx'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Jason Hatton\'s Development Portfolio',
-  description: 'Examples of my work',
+  description: 'A little something about Jason Hatton and the kind of work he does.',
+  openGraph: {
+    images: {
+      url: 'https://jasonhatton.com/public/headshot.webp',
+      width: 800,
+      height: 600,
+    }
+  }
 }
 
 export default function RootLayout({
-  children,
-}: Readonly<{
+                                     children,
+                                   }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <body className={clsx(inter.className)}>
+    {children}
+    </body>
     </html>
   )
 }

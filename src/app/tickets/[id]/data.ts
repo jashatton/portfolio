@@ -1,3 +1,4 @@
+import { randAddress, randNumber } from '@ngneat/falso'
 import type { Movie, TheaterShowTimes } from '@/app/tickets/[id]/types'
 
 const MOVIES: Record<number, Movie> = {
@@ -5,40 +6,27 @@ const MOVIES: Record<number, Movie> = {
     {
       id: 1,
       title: 'Battle over Fiera',
-      posterUrl: '/tickets/battle-over-fiera.png',
+      posterUrl: '/tickets/battle-over-fiera.webp',
       brandColor: '#D97706',
+      textColor: '#d1d5db',
     },
   2:
     {
       id: 2,
       title: 'Jess and Deno',
-      posterUrl: '/tickets/jess-and-deno.jpg',
-      brandColor: '#9FACE1'
-    }
+      posterUrl: '/tickets/jess-and-deno.webp',
+      brandColor: '#9FACE1',
+      textColor: '#2c2d32',
+    },
 }
 
-const SHOW_TIMES: Record<string, TheaterShowTimes[] | undefined> = {
-  '63376': [
-    {
-      id: 1,
-      name: 'Mom and Pop Mega-plex',
-      address: '1234 Main St',
-      city: 'Springfield',
-      state: 'IL',
-      zip: '62701',
-      date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' }),
-      showTimes: ['4:30 pm', '6:30 pm', '8:30 pm']
-    },
-    {
-      id: 2,
-      name: 'BMG Super Mega-plex',
-      address: '12 Gorge Rd',
-      city: 'Chicago',
-      state: 'IL',
-      zip: '62731',
-      date: new Date(new Date().getTime() + (1000 * 60 * 60 * 24)).toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' }),
-      showTimes: ['5:15 pm', '7:15 pm', '9:15 pm', '10:15 pm']
-    }]
+function generateShowTimes(): TheaterShowTimes[] {
+  const dates = generateDates(10)
+
+  return dates.flatMap((date) => {
+    const showTimeCount = randNumber({ min: 1, max: 8 })
+    return [...new Array<TheaterShowTimes>(showTimeCount)].map(() => generateTheaterShowTime(date))
+  })
 }
 
 export function generateDates(amount = 10): Date[] {
@@ -53,8 +41,14 @@ export function generateDates(amount = 10): Date[] {
     })
 }
 
-export function getShowTimes(zip: string, date: Date): TheaterShowTimes[] {
-  return SHOW_TIMES[zip]?.filter((showTimes) => byDate(date, showTimes)) ?? []
+/**
+ * For the purposes of the demo, this function will return a random set of show times, but not based on movieId
+ */
+export function getShowTimes(_movieId: string, zip: string, date: Date): TheaterShowTimes[] {
+  if (zip.length !== 5) return []
+
+  const showTimes = generateShowTimes()
+  return showTimes.filter((showTime) => byDate(date, showTime))
 }
 
 function byDate(date: Date, showTimes: TheaterShowTimes): boolean {
@@ -71,7 +65,39 @@ export function getMovies(): Movie[] {
 }
 
 export const startOfDay = () => {
-  const now=new Date()
-  now.setUTCHours(0, 0, 0, 0)
+  const now = new Date()
+  now.setHours(0, 0, 0, 0)
   return now
+}
+
+function randTheaterName(): string {
+  const names = ['Mom and Pop Mega-plex', 'BMG Super Mega-plex', 'Cineplex', 'Theater of Dreams', 'Silver Screen Cinema']
+  return names[Math.floor(Math.random() * names.length)]
+}
+
+function generateTheaterShowTime(date: Date): TheaterShowTimes {
+  const {city , street, zipCode: zip  } = randAddress()
+  const showTimeCount = randNumber({ min: 1, max: 6 })
+
+  const showTimes = Array.from(new Set([...new Array<string>(showTimeCount)].map(() => {
+    const hour = randNumber({ min: 13, max: 24 }) - 12
+    const minuteValues = [0, 15, 30, 45]
+    const minutes = minuteValues[Math.floor(Math.random() * minuteValues.length)]
+      return `${hour.toString()}:${minutes === 0 ? '00' : minutes.toString()} PM`
+  }).sort((a, b) => {
+    const aTime = parseInt(a.split(':')[0])
+    const bTime = parseInt(b.split(':')[0])
+    return aTime - bTime
+  }))
+)
+  return {
+    id: randNumber(),
+    name: randTheaterName(),
+    address: street,
+    city,
+    state: 'IL',
+    zip,
+    date: date.toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' }),
+    showTimes
+  }
 }

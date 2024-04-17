@@ -19,8 +19,8 @@ const config: Config = {
     },
   },
   plugins: [
-    // eslint-disable-next-line import/no-extraneous-dependencies -- Didn't want to fix it or turn this off globally just yet but this is valid
-    require('tailwind-scrollbar')
+    require('tailwind-scrollbar'),
+    require('@tailwindcss/container-queries')
   ],
 }
 export default config
