@@ -28,7 +28,7 @@ export default function Home() {
         <ul className="space-y-4">
           <li className="rounded-lg border border-solid border-gray-500">
             <div className="w-full border-b border-solid border-gray-500 p-4 text-xl underline hover:text-emerald-500">
-              <Link href="/tickets">
+              <Link href="/tickets" target="_blank">
                 Good Flix Ticket Page
               </Link>
             </div>
@@ -42,7 +42,7 @@ export default function Home() {
           </li>
           <li className="rounded-lg border border-solid border-gray-500">
             <div className="w-full border-b border-solid border-gray-500 p-4 text-xl underline hover:text-emerald-500">
-              <Link href="/sdvt">Stardew Valley Tracker</Link>
+              <Link href="/sdvt" target="_blank">Stardew Valley Tracker</Link>
             </div>
             <div className="p-4">
               <p className="text-pretty">
