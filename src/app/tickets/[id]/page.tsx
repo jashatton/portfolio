@@ -11,12 +11,12 @@ export default function TicketPages({ params }: { params: { id: number } }): Rea
   if (!movie) return notFound()
 
   return (
-    <div className="flex h-[95vh] w-full flex-col text-white lg:flex-row">
+    <div className="flex h-[95vh] w-full flex-col text-white sm:flex-row">
       <Poster
         title={movie.title}
         posterUrl={movie.posterUrl}
       />
-      <section className="w-full max-w-full overflow-hidden">
+      <section className="w-full max-w-full sm:overflow-hidden">
         <Search brandColor={movie.brandColor} textColor={movie.textColor} />
       </section>
     </div>

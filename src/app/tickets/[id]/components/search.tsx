@@ -41,7 +41,7 @@ export default function Search({ brandColor, textColor }: {
 
   return (
     <div className="flex h-screen flex-col overflow-hidden">
-      <search style={{ backgroundColor: brandColor }} className="p-4">
+      <search style={{ backgroundColor: brandColor }} className="p-2 2xl:p-4">
         <form className="flex flex-col gap-4 rounded-lg bg-transparent/20 p-4">
           <div className="flex items-center justify-between gap-x-2">
             <ZipcodeInput onChange={handleZipChange} />

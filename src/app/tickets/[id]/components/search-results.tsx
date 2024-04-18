@@ -5,7 +5,7 @@ export default function SearchResults({ results, brandColor, textColor }: { resu
   if(results.length === 0) return <NoResults />
 
   return (
-    <div className="flex h-screen max-h-dvh flex-col gap-y-2 overflow-y-auto overflow-x-hidden bg-black p-2 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-gray-600 scrollbar-corner-black">
+    <div className="flex flex-col gap-y-2 overflow-y-auto overflow-x-hidden bg-black p-2 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-gray-600 scrollbar-corner-black lg:h-screen lg:max-h-dvh">
       {
         results.map((result) => (
           <SearchResult key={result.id} result={result} brandColor={brandColor} textColor={textColor}/>

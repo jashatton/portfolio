@@ -20,7 +20,7 @@ export default function ZipcodeInput({ onChange}: { onChange: (zip: string) => v
           id="zip-search"
           name="zip-search"
           type="text"
-          className="w-full text-sm text-black focus:ring-offset-4"
+          className="w-full text-lg text-black focus:ring-offset-4"
           autoFocus
           defaultValue="55555"
           onChange={handleOnChange}

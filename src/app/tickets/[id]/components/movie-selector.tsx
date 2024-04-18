@@ -10,7 +10,7 @@ import { type Movie } from '@/app/tickets/[id]/types'
 export default function MovieSelector({ movies }: {
   movies: Movie[],
 }): ReactElement {
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(false)
 
   const handleShow = () => {
     setShow(true)
@@ -22,9 +22,9 @@ export default function MovieSelector({ movies }: {
 
   return (
     <div
-      className={clsx('overflow-hidden p-2', show ? 'h-[300px] transition duration-1000 ease-in-out' : 'h-[50px] transition duration-500 ease-in-out')}>
+      className={clsx('overflow-hidden p-2', show ? 'h-[300px] transition duration-1000 ease-in-out' : 'h-[55px] transition duration-500 ease-in-out')}>
       <div className="flex w-full items-center justify-between gap-2 px-4 py-2">
-        <h2 className="text-nowrap text-left text-2xl font-bold text-gray-300">Also In Theaters</h2>
+        <h2 className="text-nowrap text-left text-2xl font-bold text-gray-300 ">Also In Theaters</h2>
         <div className="flex gap-2">
           {
             show ? <button onClick={handleHide} className="rounded-lg bg-black/20 px-4 py-2 text-white"><BiChevronDown
@@ -35,9 +35,9 @@ export default function MovieSelector({ movies }: {
           }
         </div>
       </div>
-      <div className="h-full overflow-hidden overflow-y-auto pb-8 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-gray-400 scrollbar-corner-black sm:pb-4">
+      <div className="h-full overflow-hidden overflow-x-auto pb-8 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-gray-400 scrollbar-corner-black sm:pb-4">
         <div
-          className="flex flex-wrap justify-center gap-4 overflow-hidden overflow-y-auto rounded-lg bg-white/20 p-4 sm:pb-4 ">
+          className="flex justify-center gap-2 lg:gap-4 overflow-hidden overflow-y-auto rounded-lg bg-white/20 p-4 sm:pb-4 xl:gap-4">
           {
             movies.map((movie: Movie) => {
 
