@@ -2,21 +2,27 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { BsGithub, BsLinkedin } from 'react-icons/bs'
 
 export default function Home() {
 
   return (
-    <main className="flex min-h-screen flex-col items-center p-8">
-      <div className="aspect-video max-w-screen-lg">
-        <section className="cursor-pointer rounded-lg border border-solid border-gray-500">
-          <h1
-            className=" border-b border-solid border-gray-500 p-2 text-center text-2xl underline hover:text-emerald-500">
-            <Link href="/about">Jason Hatton</Link>
-          </h1>
-          <Image className="rounded-b-lg" src="/home/linked-in-ben10-banner.webp" alt="hero image" width="3027"
-                 height="1280" />
-        </section>
-      </div>
+    <main className="mx-auto mt-20 flex min-h-screen max-w-screen-lg flex-col items-center gap-14 p-8">
+      <section className="cursor-pointer rounded-lg border border-solid border-gray-500">
+        <h1
+          className=" border-b border-solid border-gray-500 p-2 text-center text-2xl underline hover:text-emerald-500">
+          <Link href="/about">Jason Hatton</Link>
+        </h1>
+        <Image className="rounded-b-lg" src="/home/linked-in-ben10-banner.webp" alt="hero image" width="3027"
+               height="1280" />
+      </section>
+      <section className="w-full">
+        <p className="py-4 text-2xl">Links</p>
+        <ul className="flex items-center justify-center gap-x-8 rounded-lg border border-solid border-gray-500 p-8">
+          <li><Link target="_blank" href="https://www.linkedin.com/in/jashatton/"><BsLinkedin size={50} /></Link></li>
+          <li><Link target="_blank" href="https://github.com/jashatton/"><BsGithub size={50} /></Link></li>
+        </ul>
+      </section>
       <section>
         <h2 className="py-4 text-2xl">Projects</h2>
         <ul className="space-y-4">
@@ -49,7 +55,6 @@ export default function Home() {
               </p>
             </div>
           </li>
-
         </ul>
       </section>
     </main>
