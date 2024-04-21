@@ -12,7 +12,7 @@ export default function DefaultLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="flex h-dvh flex-col">
+    <div className="flex flex-col">
       <div className="grow-0">
         <NavMenu />
       </div>

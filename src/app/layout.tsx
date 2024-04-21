@@ -30,15 +30,15 @@ export default function RootLayout({
   return (
     <html lang="en">
     <body className={clsx(inter.className)}>
+    {children}
     <Link
-      className="absolute right-10 top-4 flex w-fit items-center gap-2 text-nowrap"
+      className="mx-auto flex w-fit items-center gap-2 text-nowrap p-4"
       href="https://github.com/jashatton/portfolio"
       target="_blank"
     >
-      <p className="hidden sm:block">This portfolio is on</p>
+      <p>This is on</p>
       <BsGithub size={30} />
     </Link>
-    {children}
     </body>
     </html>
   )
