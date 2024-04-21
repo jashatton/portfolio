@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
-import { BiLogoNodejs } from 'react-icons/bi'
 import ProjectsList from '@/app/components/projects-list'
 import TechList from '@/app/components/tech-list'
 
