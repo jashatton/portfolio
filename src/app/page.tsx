@@ -18,13 +18,32 @@ export default function Home() {
         height="1280"
       />
 
-      <div className="flex flex-col gap-14 p-8">
+      <div className="flex max-w-7xl flex-col items-center gap-12 p-8">
         <section className="cursor-pointer rounded-lg border border-solid border-gray-500">
           <div className="flex flex-col gap-2 border-b border-solid border-gray-500 p-4">
-            <h1
-              className="text-center text-2xl underline hover:text-emerald-500">
-              <Link href="/about">Jason Hatton here!</Link>
-            </h1>
+            <div className="flex gap-x-8">
+              <Link href="/about">
+                <h1
+                  className="text-center text-2xl underline hover:text-emerald-500">
+                  Jason Hatton
+                </h1>
+              </Link>
+              <ul className="flex items-center justify-center gap-x-8">
+                <li>
+                  <Link className="flex flex-col items-center gap-2 underline hover:text-emerald-500" target="_blank"
+                        href="https://www.linkedin.com/in/jashatton/">
+                    <BsLinkedin size={25} />
+                  </Link>
+                </li>
+                <li>
+                  <Link className="flex flex-col items-center gap-2 underline hover:text-emerald-500" target="_blank"
+                        href="https://github.com/jashatton/">
+                    <BsGithub size={25} />
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
             <p className="text-pretty">
               I am a product minded full stack developer with a passion for creating beautiful and functional
               applications. I have experience with a variety of technologies and always looking for new challenges.
@@ -32,35 +51,18 @@ export default function Home() {
           </div>
         </section>
         <section className="w-full">
-          <p className="py-4 text-2xl">Links</p>
-          <ul className="flex items-center justify-center gap-x-8 rounded-lg border border-solid border-gray-500 p-8">
-            <li>
-              <Link className="flex flex-col items-center gap-2 underline hover:text-emerald-500" target="_blank"
-                    href="https://www.linkedin.com/in/jashatton/">
-                <BsLinkedin size={50} />
-                <p className="text-pretty text-center">LinkedIn</p>
-              </Link>
-            </li>
-            <li>
-              <Link className="flex flex-col items-center gap-2 underline hover:text-emerald-500" target="_blank" href="https://github.com/jashatton/">
-                <BsGithub size={50} />
-                <p className="text-pretty text-center">GitHub</p>
-              </Link>
-            </li>
-          </ul>
-        </section>
-        <section>
           <h2 className="py-4 text-2xl">Recommendations</h2>
           <div className="rounded-lg border border-solid border-gray-500 p-8">
             <p className="text-pretty">
               I have worked with some amazing people and have been fortunate to have some great recommendations.
             </p>
-            <Link className="underline hover:text-emerald-500" target="_blank" href="https://www.linkedin.com/in/jashatton/#:~:text=Received,Received">
+            <Link className="underline hover:text-emerald-500" target="_blank"
+                  href="https://www.linkedin.com/in/jashatton/#:~:text=Received,Received">
               Check them out here!
             </Link>
           </div>
         </section>
-        <section className="flex flex-col gap-2">
+        <section className="flex w-full flex-col gap-2">
           <h2 className="py-4 text-2xl">Technologies and Tools</h2>
           <TechList />
         </section>
