@@ -26,7 +26,7 @@ export default function Home() {
               <Link href="/about">Jason Hatton here!</Link>
             </h1>
             <p className="text-pretty">
-              I am a product oriented full stack developer with a passion for creating beautiful and functional
+              I am a product minded full stack developer with a passion for creating beautiful and functional
               applications. I have experience with a variety of technologies and always looking for new challenges.
             </p>
           </div>
