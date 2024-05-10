@@ -50,6 +50,10 @@ export default function Home() {
             </p>
           </div>
         </section>
+        <section>
+          <h2 className="py-4 text-2xl">Projects</h2>
+          <ProjectsList />
+        </section>
         <section className="w-full">
           <h2 className="py-4 text-2xl">Recommendations</h2>
           <div className="rounded-lg border border-solid border-gray-500 p-8">
@@ -65,10 +69,6 @@ export default function Home() {
         <section className="flex w-full flex-col gap-2">
           <h2 className="py-4 text-2xl">Technologies and Tools</h2>
           <TechList />
-        </section>
-        <section>
-          <h2 className="py-4 text-2xl">Projects</h2>
-          <ProjectsList />
         </section>
       </div>
     </main>
