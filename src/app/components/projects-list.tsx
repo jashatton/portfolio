@@ -10,6 +10,7 @@ export default function ProjectsList() {
             Angel Studios
           </Link>
         </div>
+        <Image src="/home/angel_watch.webp" alt="Angel Studios Watch Page" width={1536} height={1536} />
         <p className="text-pretty p-4">
           I contributed to the initial launch of <Link className="text-center underline hover:text-emerald-500" href="https://angel.com">angel.com</Link>.
           The main site for Angel Studios a platform for creators to share their work and for fans to support them. Support can come in
@@ -17,7 +18,6 @@ export default function ProjectsList() {
           breaking the Hollywood gatekeeper model and allowing them to pick they content they want to see created and made
           available.
         </p>
-        <Image src="/home/angel_watch.webp" alt="Angel Studios Watch Page" width={1536} height={1536} />
       </li>
       <li className="rounded-lg border border-solid border-gray-500">
         <div className="w-full border-b border-solid border-gray-500 p-4 text-xl underline hover:text-emerald-500">
@@ -25,11 +25,11 @@ export default function ProjectsList() {
             Good Flix Ticket Page
           </Link>
         </div>
+        <Image src="/home/good-flix-screenshot.webp" alt="Angel Studios Watch Page" width={1536} height={1536} />
         <p className="text-pretty p-4">
           This demo represents my initial contribution to the launch of Angel Studios' ticket purchasing page in November 2022.
           The successful launch paved the way for an innovative product that has revolutionized the industry by enabling
           a studio to sell tickets for its own content.        </p>
-        <Image src="/home/good-flix-screenshot.webp" alt="Angel Studios Watch Page" width={1536} height={1536} />
       </li>
       <li className="rounded-lg border border-solid border-gray-500">
         <div className="w-full border-b border-solid border-gray-500 p-4 text-xl underline hover:text-emerald-500">
