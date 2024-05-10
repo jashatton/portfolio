@@ -12,11 +12,11 @@ export default function ProjectsList() {
         </div>
         <Image src="/home/angel_watch.webp" alt="Angel Studios Watch Page" width={1536} height={1536} />
         <p className="text-pretty p-4">
-          I contributed to the initial launch of <Link className="text-center underline hover:text-emerald-500" href="https://angel.com">angel.com</Link>.
-          The main site for Angel Studios a platform for creators to share their work and for fans to support them. Support can come in
-          a wide range  of options like crowd-funding, their Pay It Forward model, and The Guild which is involved in
-          breaking the Hollywood gatekeeper model and allowing them to pick they content they want to see created and made
-          available.
+          I played a key role in the initial launch of Angel Studios' main site,
+          <Link className="text-center underline hover:text-emerald-500" href="https://angel.com">angel.com</Link>.
+          This platform empowers creators to showcase their work and gain support from fans through various means such
+          as crowd-funding, the Pay It Forward model, and The Guild. The Guild, in particular, disrupts the traditional
+          Hollywood gatekeeper model by allowing members to choose the content they wish to see created.
         </p>
       </li>
       <li className="rounded-lg border border-solid border-gray-500">
